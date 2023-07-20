@@ -6,7 +6,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN apt-get update -y
 
-RUN apt-get install git
+RUN apt-get install git -y
 
 RUN pip install --upgrade pip awsebcli
 
