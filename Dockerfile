@@ -1,4 +1,4 @@
-FROM python:3.10.0-slim-buster
+FROM python:3.11-slim-bookworm
 
 ARG command="--version"
 
@@ -6,7 +6,7 @@ COPY entrypoint.sh /entrypoint.sh
 
 RUN apt-get update -y
 
-RUN apt-get -y install git
+RUN apt-get install git -y
 
 RUN pip install --upgrade pip awsebcli
 
