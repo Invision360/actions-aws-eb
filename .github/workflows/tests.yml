@@ -1,8 +1,8 @@
 name: Run tests
-on: 
+on:
   push:
     paths-ignore:
-      - '*.md'
+      - "*.md"
       - .github/FUNDING.yml
       - LICENCE
 
@@ -13,11 +13,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Build image
-        run: | 
-          docker build -t awsebcli .
-      
+        run: |
+          docker build --no-cache -t awsebcli .
+
       - name: Run container
         run: |
           docker run awsebcli --version
@@ -33,4 +33,4 @@ jobs:
       - name: See version
         uses: ./
         with:
-          command: '--version'
+          command: "--version"
